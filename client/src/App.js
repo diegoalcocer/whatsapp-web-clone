@@ -1,34 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-import Message from './Message';
-import React, { useState } from 'react';
+import React from 'react';
+import { ChatProvider } from './contexts/ChatContext';
+import ChatList from './components/ChatList/ChatList';
+import MessageArea from './components/MessageArea/MessageArea';
+import InputArea from './components/InputArea/InputArea';
+
 
 function App() {
 
-  const [counter, setCounter] = useState(0);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to WhatsApp clone <code>web-version</code>
-        </p>
-        <Message/>
-        <div>
-          <p>Counter: {counter}</p>
-          <button onClick={() => setCounter(counter + 1)}>Increase</button>
-        </div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChatProvider>
+      <div className="app">
+        <ChatList />
+        <MessageArea />
+        <InputArea />
+      </div>
+    </ChatProvider>
   );
 }
 

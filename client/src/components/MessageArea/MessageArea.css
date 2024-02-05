@@ -1,0 +1,19 @@
+.message-area {
+    padding: 20px;
+    height: calc(100vh - 120px); /* Adjust based on other UI elements */
+    overflow-y: auto;
+  }
+  
+  .message {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #dcf8c6; /* Light green for outgoing messages */
+    max-width: 60%;
+    border-radius: 8px;
+  }
+  
+  .message.incoming {
+    background-color: #ebebeb; /* Light grey for incoming messages */
+    margin-left: auto; /* Align incoming messages to the right */
+  }
+  

@@ -7,7 +7,7 @@ const authenticate = require('../middleware/authenticate');
 router.post('/', userController.createUser);
 
 //Retrieve user details
-router.get('/:id',authenticate,userController.getUser);
+router.get('/:id', authenticate, userController.getUser);
 
 // Login
 router.post('/login', userController.loginUser);

@@ -1,0 +1,20 @@
+.chat-list {
+    height: 100vh; /* Full height of the viewport */
+    overflow-y: auto; /* Make it scrollable */
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 10px;
+  }
+  
+  .chat-summary {
+    background-color: #ffffff; /* White background for each item */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .chat-summary:hover {
+    background-color: #e8e8e8; /* Slightly darker on hover */
+  }
+  

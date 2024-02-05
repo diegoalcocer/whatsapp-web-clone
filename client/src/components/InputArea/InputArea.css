@@ -1,0 +1,28 @@
+.input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f2f2f2; /* Slightly darker background */
+  }
+  
+  .input-area input {
+    flex-grow: 1; /* Input field takes up available space */
+    padding: 10px;
+    margin-right: 10px; /* Space between input field and button */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 20px; /* Rounded corners for the input field */
+  }
+  
+  .input-area button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Rounded corners for the button */
+    cursor: pointer;
+  }
+  
+  .input-area button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
