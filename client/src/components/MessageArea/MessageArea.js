@@ -4,15 +4,14 @@ import { useChat } from "../../contexts/ChatContext";
 
 function MessageArea(){
     const {currentChat, messages} = useChat();
-    
-     // Retrieve messages for the current chat
-     const chatMessages = currentChat ? messages[currentChat.id] : [];
+        // Log the entire messages object and the messages for the current chat
+        const chatMessages = currentChat ? messages[currentChat._id] || [] : [];
     
     return(
         <div className="message-area">
             {chatMessages.map((message)=>(
-                <div key={message.id} className="message">
-                    <div>{message.sender}: {message.text}</div>
+                <div key={message._id} className="message">
+                    <div>{message.senderId}: {message.content}</div>
                 </div>
             ))}
         </div>

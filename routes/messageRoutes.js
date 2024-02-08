@@ -3,7 +3,7 @@ const router = express.Router();
 const messageController = require('../controllers/messageController');
 
 //Send a new message
-router.post(messageController.createMessage);
+router.post('/', messageController.createMessage);
 
 //Retrieve all messages by chatId
 router.get('/:chatId', messageController.getMessagesForChat);
