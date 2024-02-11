@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 
-const API_BASE_URL = 'http://localhost:5000/api';
-//process.env.REACT_APP_API_BASE_URL;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const fetchChats = async () =>{
     return axios.get(`${API_BASE_URL}/chats/65b71e88f3d4f2c72f3cd841`).then(res => res.data);
@@ -22,13 +21,6 @@ export const sendMessage = async (messageData) =>{
     try {
         const response = await axios.post(`${API_BASE_URL}/messages`, messageData);
         console.log({response});
-
-        // const response = await axios.post(`${API_BASE_URL}/messages`, messageData, {
-        //     headers: {
-        //       'Content-Type': 'application/json', // Explicitly set the Content-Type
-              
-        //     },
-        //   });
 
         return response.data;
       } catch (error) {

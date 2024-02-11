@@ -7,9 +7,11 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const messageRoutes = require('./routes/messageRoutes');
+// Read the CORS origins as an array
+const corsOrigins = process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : [];
 
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: corsOrigins
 }));
 
 app.use(express.json()); 
