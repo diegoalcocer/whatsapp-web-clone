@@ -85,11 +85,13 @@ export const ChatProvider = ({ children }) => {
       setChats(updatedChats);
     }
   };
+
+  const deselectChat = () => setCurrentChat(null);
   
 
 
   return (
-    <ChatContext.Provider value={{ chats, currentChat, selectChat, messages, addMessage }}>
+    <ChatContext.Provider value={{ chats, currentChat, selectChat, messages, addMessage, deselectChat }}>
       {children}
     </ChatContext.Provider>
   );

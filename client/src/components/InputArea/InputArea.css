@@ -27,6 +27,7 @@
   border: none;
   border-radius: 20px; /* Rounded corners for the button */
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .input-area button:hover {
