@@ -36,25 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
 body {
   overflow-x: hidden; /* Prevents horizontal scrollbar */
 }
 
-.back-button {
+/* .back-button {
   display: flex;
   align-items: center;
   background-color: transparent;
   border: none;
-  color: #128C7E; /* WhatsApp theme color */
+  color: #128C7E; 
   cursor: pointer;
   padding: 10px;
   font-size: 16px;
 }
 
 .back-button:hover {
-  background-color: #f0f0f0; /* Light grey on hover for feedback */
-}
+  background-color: #f0f0f0; 
+} */
 
-.back-button svg {
-  margin-right: 8px; /* Space between the icon and text */
-}
+/* .back-button svg {
+  margin-right: 8px; 
+} */

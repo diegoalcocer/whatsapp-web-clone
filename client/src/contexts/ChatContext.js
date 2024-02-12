@@ -9,13 +9,14 @@ export const ChatProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState({});
   const [currentChat, setCurrentChat] = useState(null);
-
+  const currentUser = localStorage.getItem('userId');
+ 
   useEffect(()=>{
     const loadChats = async () =>{
       setLoading(true);
 
       try {
-        const response = await apiService.fetchChats();
+        const response = await apiService.fetchChats(currentUser);
         console.info('Fetched chats:', response);
         setChats(response);
   
@@ -91,7 +92,7 @@ export const ChatProvider = ({ children }) => {
 
 
   return (
-    <ChatContext.Provider value={{ chats, currentChat, selectChat, messages, addMessage, deselectChat }}>
+    <ChatContext.Provider value={{ chats, currentChat, selectChat, messages, addMessage, deselectChat, currentUser }}>
       {children}
     </ChatContext.Provider>
   );

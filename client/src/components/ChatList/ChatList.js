@@ -3,11 +3,12 @@ import './ChatList.css';
 import { useChat } from '../../contexts/ChatContext';
 import mockUsers from '../MockUsers';
 import { motion } from 'framer-motion';
+import {List, ListItemButton, ListItemText, ListItemAvatar, Avatar} from '@mui/material'
 
 function ChatList(){
     
     const { chats, selectChat } = useChat();
-    const currentUser = '65b71e88f3d4f2c72f3cd841';
+    const currentUser = localStorage.getItem('userId');
     const variants = {
         initial: { x: '100vw' },
         in: { x: 0 },
@@ -21,10 +22,6 @@ function ChatList(){
         } else {
             // For individual chats, find the other participant's name
             const otherParticipant = chat.participants.find(p => p !== currentUser);
-            // console.log("other part", otherParticipant);
-            // chat.participants.forEach(element => {
-            //     console.log("participants: ",element);
-            // });
             return otherParticipant ? mockUsers[otherParticipant] : 'Unknown';
         }
     };
@@ -36,15 +33,25 @@ function ChatList(){
         animate="in"
         exit="out"
         transition={{ type: 'tween', ease: 'anticipate', duration: 0.5 }}
-      >
-            {
+        >
+            <List>
+                {chats.map((chat) => (
+                    <ListItemButton key={chat._id} onClick={() => selectChat(chat._id)}>
+                        <ListItemAvatar>
+                            <Avatar>U</Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary={getDisplayName(chat)} secondary={chat.lastMessage ? chat.lastMessage.content : 'No messages yet'} />
+                    </ListItemButton>
+                ))}
+            </List>
+            {/* {
                chats.map((chat) => (
                 <div key={chat._id} className='chat-summary' onClick={()=> selectChat(chat._id)}>
                     <div>{getDisplayName(chat)}</div>
                     <div>{chat.lastMessage ? chat.lastMessage.content : 'No messages yet'}</div>
                 </div>
                 ))
-            }
+            } */}
         </motion.div>
     );
 }
